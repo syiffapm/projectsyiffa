@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Syiffa</title>
+    <link rel="stylesheet" href="style.css">
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+
+
+</head>
+<body>
+    <nav class="menu">
+        <label>Company</label>
+        <ul>
+            <li><a href="#">ABOUT</a>
+                <ul class="dropdown">
+                    <li><a href="#">HISTORY</a></li>
+                    <li><a href="#">VISION MISSION</a></li>
+                </ul>
+            </li>
+            <li><a href="#">OUR WORK</a></li>
+            <li><a href="#">OUR TEAM</a></li>
+            <li><a href="#">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="content-slide">
+            <div class="imgslide fade">
+            <img src="assets/bg.jpg" alt="">
+            <div class="text">THIS IS A PLACE WHERE TECHNOLOGY & CREATIVITY FUSED INTO DIGITAL CHEMISTRY</div>
+            </div>
+
+            <div class="imgslide fade">
+                <img src="assets/about-bg.jpg" alt="">
+                <div class="text">WE DON'T HAVE THE BEST BUT WE HAVE THE GREATEST TEAM</div>
+                </div>
+
+                <a class="prev" onclick="nextslide(-1)">&#10094;</a>
+                <a class="next" onclick="nextslide(-1)">&#10095;</a>
+        </div>
+
+        <div class="page">
+            <span class="dot" onclick="dotslide(1)"></span>
+            <span class="dot" onclick="dotslide(2)"></span>
+        </div>
+
+    </div>       
+    
+    <div class="values">
+        <div class="section-title">
+            <h2 style="text-align: center;">OUR VALUES</h2>
+          </div>
+          <div class="container" data-aos="fade-up">
+            <div class="box-container">
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                  <div class="icon-box" data-aos="fade-up" data-aos-delay="100" style="background-color: rgb(239, 108, 108);">
+                    <div class="icon"><i class="fa-regular fa-lightbulb"></i></div>
+                    <h4 class="title"><a href="">INNOVATIVE</a></h4>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. At veritatis ipsam deleniti accusantium sed similique?</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="100" style="background-color: rgb(33, 166, 93);">
+                      <div class="icon"><i class="fa-regular fa-building"></i></div>
+                      <h4 class="title"><a href="">LOYALTY</a></h4>
+                      <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus aliquid reiciendis saepe alias sequi. Vel.</p>
+                    </div>
+                  </div>
+           
+                        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                            <div class="icon-box" data-aos="fade-up" data-aos-delay="100" style="background-color: rgb(48, 148, 197);">
+                            <div class="icon"><i class="fa-regular fa-lightbulb"></i></div>
+                            <h4 class="title"><a href="">RESPECT</a></h4>
+                            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, esse? Consectetur, adipisci? Optio, ut consequuntur!</p>
+                    </div>
+                  </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    
+   <div class="contact">
+    <div class="col-lg-6">
+        <h2 style="text-align: center;">CONTACT US</h2>
+        <form action="" method="post" role="form" class="php-email-form">
+          <div class="row">
+            <div class="col-md-6 form-group">
+              Name <br>
+              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required="">
+            </div>
+            <div class="col-md-6 form-group mt-3 mt-md-0">
+              Email <br>
+              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required="">
+            </div>
+          </div>
+          <div class="form-group mt-3">
+            Message <br>
+            <textarea class="form-control" name="message" rows="7" placeholder="Message" required=""></textarea>
+          </div>
+          <div class="my-3">
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your message has been sent. Thank you!</div>
+          </div>
+          <div class="text-center"><button type="submit">Submit</button></div>
+        </form>
+      </div>
+   </div>
+
+   <!-- footer -->
+   
+    <script>
+        var slideIndex = 1;
+            showSlide(slideIndex);
+
+        function nextslide(n){
+            showSlide(slideIndex += n);
+        }
+
+        function dotslide(n){
+            showSlide(slideIndex = n);
+        }
+
+        function showSlide(n){
+            var i;
+            var slides = document.getElementsByClassName("imgslide");
+            var dot = document.getElementsByClassName("dot");
+        
+        if (n > slides.length){
+            slideIndex=1
+        }
+
+        if (n < 1){
+            slideIndex = slides.length;
+        }
+
+        for (i = 0; i < slides.length; i++){
+            slides[i].style.display="none";
+        }
+
+        for (i = 0; i < slides.length; i++){
+            dot[i].className = dot[i].className.replace(" active", "");
+        }
+
+        slides[slideIndex - 1].style.display="block";
+        }
+
+        dot[slideIndex - 1].className += " active";
+        
+    </script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+</body>
+</html>
